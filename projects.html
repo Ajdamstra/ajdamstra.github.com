@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Photos/Home/A.png">
+    <title>Abram Damstra Projects</title>
+    <link rel="stylesheet" href="cssfolder/projects.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <!--Nav-bar-->
+        <div class="background"></div>
+        <header class="header">
+            <a href="index" class="name">
+                <img src="Photos/Home/SigIcon-2.png" alt="Logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.">About</a>
+                <a href="projects">Projects</a>
+                <a href="passions">Passions</a>
+                <a href="contact">Contact</a>
+            </nav>
+        </header>
+        <div class="selfImageContainer1"></div>
+
+        <div class="projectinfo">
+            <h2>My past and upcoming projects can be viewed here.</h2>
+            <p>Click on a project and scroll to view it's details.</p>
+        </div>
+
+
+        <!-- Categories -->
+        <section class="categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="website">Website</button>
+            <button class="category-btn" data-category="data">Data</button>
+            <!-- <button class="category-btn" data-category="ai">AI</button> -->
+            <button class="category-btn" data-category="upcoming">In-Progress</button>
+        </section>
+
+
+
+
+        <section class="projects">
+            <div class="project" data-category="website">
+                <div class="slideshow">
+                    <!-- Additional photos for Portfolio project -->
+                    <img src="Photos/Projects/Portfolio-screenshot.png" alt="Portfolio Website">
+                    <!-- More images as needed -->
+                </div>
+                <h3>Portfolio Website</h3>
+                <p>I created this portfolio using HTML/CSS/JavaScript.<br>
+                    This was a very fun project to work on because it allowed for lots of creativity.. I'm familiar with
+                    website design from making numerous in the past using website builders and design tools.
+                    However, using traditional web development provides significantly more personalization.</p>
+            </div>
+            <div class="project" data-category="data">
+                <img src="Photos/Projects/notebook.jpg.webp" alt="Virtual Notebook">
+                <h3>Virtual Notebook</h3>
+                <p>I created a simple virtual notebook for storing customizable notes about my
+                    classes...<br><br><b>Features:</b><br>Security: required login information.<br>
+                    Class search function.<br>Class-specific note customization (colors).<br><br><i>Software:</i>
+                    Python.</p>
+            </div>
+
+            <div class="project" data-category="upcoming">
+                <img src="Photos/Projects/LapTimerTestDesign.png" alt="GPS Lap Timer">
+                <h3>GPS Lap Timer</h3>
+                <p>A universal GPS based timer for racers to log their lap times based on the track they are
+                    visiting...<br><br><b>Why:</b> The current market for GPS devices in the racing industry if far
+                    outdated. Numerous versions of nearly identical devices are
+                    produced to accomplish a common goal, recording the analytics of motorsport racers. Timers found on
+                    the market are often divided by vehicle type (Motorcycle, Ko-Kart, Car, etc). This redundancy
+                    can be avoided and resolved with a new design.<br>Pricing of these devices frequently turns away
+                    customers who want a simple GPS timer.<br><br>
+                    <b>Features:</b><br>-User interface<br>-Speedometer<br>-Gyroscopic analytics<br>
+                    -Data Logging<br><br><b>Components:</b><br>-GPS Module<br>-Microcontroller<br>-Display<br>-Power
+                    Supply<br>-Gyro Sensor<br>-Enclosure<br>-Buttons.<br><br><i>Language/Software:</i> Python, CAD.
+                </p>
+            </div>
+            <!-- Add more projects with appropriate data-category attributes -->
+        </section>
+
+
+
+
+        <div class="modal-overlay">
+            <div class="modal">
+                <button class="close-modal"><img src="Photos/Projects/close-icon.webp" alt="Close"></button>
+                <button class="prev-slide">&lt;</button>
+                <button class="next-slide">&gt;</button>
+                <div class="modal-content">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <img src="Photos/Home/background.jpeg" alt="First image" id="slide1">
+                            <img src="Photos/IMG_6650.JPG" alt="Second image" id="slide2">
+                            <!-- More images -->
+                        </div>
+                    </div>
+                    <h3>Project Title</h3>
+                    <p>Description of the project...</p>
+                    <button class="close-modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="jscript/script.js"></script>
+</body>
+
+</html>

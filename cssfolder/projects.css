@@ -1,0 +1,331 @@
+@font-face {
+    src: url(../Fonts/Poppins-Regular.ttf);
+    font-family: Poppins;
+}
+
+@font-face {
+    src: url(../Fonts/Poppins-Light.ttf);
+    font-family: Poppins-Light;
+}
+
+@font-face {
+    src: url(../Fonts/Poppins-ExtraLight.ttf);
+    font-family: Poppins-ExtraLight;
+}
+
+/*Header/Nav-Bar*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../Photos/Home/background.jpeg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.insidebackground {
+    position: sticky;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    /* Transition for opacity and transform */
+    overflow: hidden;
+}
+
+.insidebackground.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name img {
+    width: 220px;
+    height: auto;
+    padding-top: 10px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.projectinfo {
+    margin: 0 auto;
+    margin-top: 180px;
+    font-family: Poppins;
+    z-index: 999;
+    color: #fff;
+    text-align: center;
+    position: sticky;
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    /* Arrange children in a column */
+}
+
+/* Categories */
+.categories {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    /* Add border-color transition */
+    border-radius: 5px;
+}
+
+.category-btn[data-category="all"]:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.category-btn[data-category="website"]:hover {
+    background-color: hsl(120, 46%, 37%);
+    color: #fff;
+}
+
+.category-btn[data-category="data"]:hover {
+    background-color: hsl(300, 49%, 35%);
+    color: #fff;
+}
+
+.category-btn[data-category="ai"]:hover {
+    background-color: hsl(240, 79%, 58%);
+    color: #fff;
+}
+
+.category-btn[data-category="upcoming"]:hover {
+    background-color: hsl(0, 76%, 59%);
+    color: #fff;
+}
+
+.category-btn.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/*Projects*/
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.project {
+    width: 250px;
+    /* Fixed width */
+    height: 300px;
+    /* Fixed height */
+    background-color: #f9f9f9;
+    border: 5px inset red;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+}
+
+.project:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    /* Scale on hover */
+}
+
+.project img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.project h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.project p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.project[data-category*="website"] {
+    border-color: hsl(120, 46%, 37%);
+}
+
+.project[data-category*="data"] {
+    border-color: hsl(300, 49%, 35%);
+}
+
+.project[data-category*="ai"] {
+    border-color: hsl(240, 79%, 58%);
+}
+
+.project[data-category*="upcoming"] {
+    border-color: hsl(0, 76%, 59%);
+}
+
+/* Project-Info */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 70%;
+    max-height: 500px;
+    overflow: auto;
+    /* Add scrollbars if content overflows */
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 10px;
+    margin-top: -5px;
+    margin-right: -3px;
+    z-index: 1;
+}
+
+.modal img {
+    max-height: 400px;
+    max-width: 100%;
+    /* Ensure the image width adjusts accordingly */
+    border-radius: 5px;
+}
+
+.prev-slide,
+.next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.prev-slide {
+    left: 5px;
+}
+
+.next-slide {
+    right: 5px;
+}
+
+.container {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}

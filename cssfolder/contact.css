@@ -1,0 +1,135 @@
+@font-face {
+    src: url(../Fonts/Poppins-Regular.ttf);
+    font-family: Poppins;
+}
+
+@font-face {
+    src: url(../Fonts/Poppins-Light.ttf);
+    font-family: Poppins-Light;
+}
+
+@font-face {
+    src: url(../Fonts/Poppins-ExtraLight.ttf);
+    font-family: Poppins-ExtraLight;
+}
+
+/*Header/Nav-Bar*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../Photos/Home/background.jpeg) no-repeat;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.insidebackground {
+    position: sticky;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    /* Transition for opacity and transform */
+    overflow: hidden;
+}
+
+.insidebackground.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.name img {
+    width: 220px;
+    height: auto;
+    padding-top: 10px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+
+}
+
+.contact-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    text-align: center;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    position: center;
+
+}
+
+.contact-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-container .contact-links {
+    margin-top: 20px;
+}
+
+.contact-container .contact-links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-container .contact-links a:hover {
+    background-color: #555;
+}
