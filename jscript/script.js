@@ -38,7 +38,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalOverlay = document.querySelector('.modal-overlay');
     const closeModalButton = document.querySelector('.close-modal');
     initializeSlideshows();
+    
+    function initializeSlideshows() {
+        // Get all slideshow containers
+        const slideshowContainers = document.querySelectorAll('.slideshow');
 
+        // Loop through each slideshow container
+        slideshowContainers.forEach(function (container) {
+            let slideIndex = 0;
+            container.dataset.slideIndex = slideIndex; // Initialize slide index for this container
+            const slides = container.querySelectorAll('.slide');
+
+            // Initially, display the first slide and hide the rest
+            slides.forEach(function (slide, index) {
+                if (index === slideIndex) {
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+        });
+    }
+    
     // Function to open modal
     function openModal(content) {
         document.querySelector('.modal-content').innerHTML = content;
