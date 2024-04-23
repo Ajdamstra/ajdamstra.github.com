@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const modalOverlay = document.querySelector('.modal-overlay');
     const closeModalButton = document.querySelector('.close-modal');
+    initializeSlideshows();
 
     // Function to open modal
     function openModal(content) {
