@@ -51,7 +51,7 @@
 }
 
 .header {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -94,7 +94,7 @@
 
 .projectinfo {
     margin: 0 auto;
-    margin-top: 180px;
+    margin-top: 20px;
     font-family: Poppins;
     z-index: 999;
     color: #fff;
